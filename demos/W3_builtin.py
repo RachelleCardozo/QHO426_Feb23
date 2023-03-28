@@ -6,7 +6,3 @@ for letter in word:
         print(letter, end="")
 
 print(word.upper())
-# hamburger
-#104-32=72
-
-#BREAK -> 10:40
