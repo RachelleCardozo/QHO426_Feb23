@@ -17,9 +17,9 @@ age = [56, 21, 16]
 people = dict(zip(names, age))
 print(people)
 #Traversing Dictionaries - accessing keys/values/both
-for thing in people:
+for thing in people: # prints the keys
     print(thing)
-for thing in people.values():
+for thing in people.values(): # prints the values
     print(thing)
 for thing in people.keys():
     print(thing)
