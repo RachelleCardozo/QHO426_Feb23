@@ -3,28 +3,21 @@ from robot import Robot
 
 class Planet:
     def __init__(self):
-        self.inhabitants = {"Humans":[], "Robots":[]}
+        self.inhabitants = []
 
     def __str__(self):
-        return f"This planet contains \nhumans: {self.inhabitants['Humans']}\nrobots: {self.inhabitants['Robots']}"
+        return f"This planet contains: {self.inhabitants}"
 
     def __repr__(self):
-        return f"Planet(humans = {self.inhabitants['Humans']}, robots = {self.inhabitants['Robots']})"
+        return f"Planet (inhabitants =  {self.inhabitants})"
 
 
     def add(self, inh):
-        if isinstance(inh, Human):
-            self.inhabitants["Humans"].append(inh)
-        elif isinstance(inh, Robot):
-            self.inhabitants["Robots"].append(inh)
+        self.inhabitants.append(inh)
 
     def remove(self, inh):
-        if isinstance(inh, Human):
-            if inh in self.inhabitants["Humans"]:
-                self.inhabitants["Humans"].remove(inh)
-        elif isinstance(inh, Robot):
-            if inh in self.inhabitants["Robots"]:
-                self.inhabitants["Robots"].remove(inh)
+        if inh in self.inhabitants:
+            self.inhabitants.remove(inh)
 
 if __name__ == "__main__":
     h1 = Human()

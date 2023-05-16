@@ -31,10 +31,14 @@ class Universe:
     def show_populations(self):
         num_planets = len(self.planets)
         fig = plt.figure()
+        num_hum, num_rob = 0,0
         for i in range(num_planets):
             planet = self.planets[i]
-            num_hum = len(planet.inhabitants["Humans"])
-            num_rob = len(planet.inhabitants["Robots"])
+            for dude in planet.inhabitants:
+                if isinstance(dude, Human):
+                    num_hum+= 1
+                elif isinstance(dude, Robot):
+                    num_rob+=1
             ax = fig.add_subplot(num_planets, 1, i+1)
             ax.bar(["Humans","Robots"],[num_hum, num_rob])
 
